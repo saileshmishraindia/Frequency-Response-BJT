@@ -89,13 +89,7 @@ We're analyzing **low-frequency response**, hence:
 
 Where:
 
-**$R_{in} = (R_1 \parallel R_2) \parallel \beta r_e$**
-
-Which simplifies as:
-
-**$R_{in} = \frac{(R_{eq} \cdot \beta r_e)}{R_{eq} + \beta r_e}$**
-
-Thus:
+**$R_{in} = (R_1 \parallel R_2) \parallel \beta r_e = \frac{(R_{eq} \cdot \beta r_e)}{R_{eq} + \beta r_e}$**
 
 **$f_{L_{Cs}} = \frac{R_{eq} + \beta r_e}{2\pi C_s R_{eq} \beta r_e}$**
 
