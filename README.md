@@ -4,7 +4,7 @@
 
 **Frequency response** refers to how an amplifier’s gain varies with the frequency of the input signal. It reveals the **range of frequencies** over which the amplifier operates efficiently, showing regions of **maximum, constant, and attenuated gain**.
 
-## Significance of FREQUENCY RESPONSE ANALYSIS IN IC DESIGN
+## SIGNIFICANCE OF FREQUENCY RESPONSE ANALYSIS IN IC DESIGN
 
 **✔ Determines amplifier performance in real-world signals.**  
 **✔ Helps in bandwidth estimation for analog and mixed-signal ICs.**  
