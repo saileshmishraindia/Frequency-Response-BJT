@@ -23,6 +23,132 @@ At low frequencies, **coupling capacitors, bypass capacitors, and emitter resist
   f_L = \frac{1}{2\pi RC}
   \]
 
+
+## MATHEMATICAL INSIGHTS
+
+## Circuit Description
+
+For a **Common Emitter amplifier** with **voltage divider biasing**:
+
+- Bias network: **R1**, **R2**
+- Input side: **AC source** with **coupling capacitor Cs**
+- Amplifier body: **RC**, **RE** and **bypassed CE**
+- Output side: **coupling capacitor Cc** and **load resistor RL**
+- Transistor parameters: **β (beta or hFE)**, **re (intrinsic emitter resistance)**
+
+### Bias Point
+
+To keep BJT in **Active Region**:
+
+**$V_{B} = V_{CC} \cdot \frac{R_2}{R_1 + R_2} > 0.69 \, \text{V}$**
+
+This ensures:
+
+- Forward bias of **base-emitter junction**
+- Proper **Q-point** setting
+
+## Voltage Gain (AV)
+
+Assuming **RE is bypassed** and **Rs is ignored**:
+
+### Voltage Gain Expression:
+
+**$A_V = \frac{V_o}{V_i} = -\frac{R_C \parallel R_L}{r_e}$**
+
+Where:
+
+**$r_e = \frac{V_T}{I_E} \quad \text{or} \quad \frac{0.0259}{I_E} \quad \text{(at room temp)}$**
+
+Also:
+
+**$I_C = I_S \cdot \exp\left( \frac{V_{BE}}{V_T} \right)$**
+
+Therefore, **re** is:
+
+- **Inversely proportional to IE**
+- **Dependent on VBE (threshold voltage ~0.7V)**
+
+### Expanded AV Expression:
+
+**$A_V = -\frac{(R_C \parallel R_L) \cdot I_E}{V_T} = -\frac{(R_C \cdot R_L)}{R_C + R_L} \cdot \frac{I_E}{V_T}$**
+
+### Gain in Decibels:
+
+**$A_V(\text{dB}) = 20 \cdot \log_{10}\left( \left| \frac{V_o}{V_i} \right| \right)$**
+
+## Cut-off Frequencies $f_L$
+
+We're analyzing **low-frequency response**, hence:
+
+- Focus on **3 capacitors**: **Cs**, **Cc**, and **CE**
+- Each contributes to **fL** (lower cut-off freq)
+
+## Input Coupling Capacitor $Cs$
+
+**$f_{L_{Cs}} = \frac{1}{2\pi R_{in} C_s}$**
+
+Where:
+
+**$R_{in} = (R_1 \parallel R_2) \parallel \beta r_e$**
+
+Which simplifies as:
+
+**$R_{in} = \frac{(R_{eq} \cdot \beta r_e)}{R_{eq} + \beta r_e}$**
+
+Thus:
+
+**$f_{L_{Cs}} = \frac{R_{eq} + \beta r_e}{2\pi C_s R_{eq} \beta r_e}$**
+
+**Design Implication:**  
+Larger $C_s$ → Smaller $f_{L_{Cs}}$ → **Better low-frequency response**
+
+## Output Coupling Capacitor $Cc$
+
+**$f_{L_{Cc}} = \frac{1}{2\pi (R_o + R_L) C_c}$**
+
+Where:
+
+**$R_o = R_C \parallel r_o = \frac{R_C \cdot r_o}{R_C + r_o}$**
+
+So:
+
+**$f_{L_{Cc}} = \frac{1}{2\pi \left( \frac{R_C \cdot r_o}{R_C + r_o} + R_L \right) C_c}$**
+
+**Design Implication:**  
+Larger $C_c$ → Smaller $f_{L_{Cc}}$ → **Improved low-frequency coupling**
+
+
+## Bypass Capacitor $CE$
+
+ **$f_{L_{CE}} = \frac{1}{2\pi C_E R_e}$**
+
+Where:
+
+ **$R_e = R_E \parallel \left( \frac{R_1 \parallel R_2}{\beta} + r_e \right)$**
+
+This becomes:
+
+ **$R_e = R_E \parallel \left( \frac{R_{eq}}{\beta} + r_e \right)$**
+
+**Design Implication:**  
+Larger $C_E$ → Lower $f_{L_{CE}}$ → **Better gain at low frequency**
+
+## Overall Bandwidth:
+
+ **$BW = f_H - f_L \approx f_H \quad \text{(if } f_L \ll f_H \text{)}$**
+
+Where:
+
+- $f_L = \max(f_{L_{Cs}}, f_{L_{Cc}}, f_{L_{CE}})$
+- $f_H$ is typically in MHz range
+
+## Summary:
+
+- **Low-frequency response is dominated by coupling and bypass capacitors.**
+- **Increasing Cs, Cc, or CE improves bandwidth by lowering fL.**
+- **Voltage gain depends on IE and load resistors.**
+- **Effective design tweaks optimize both gain and bandwidth.** 
+
 ## HIGH FREQUENCY RESPONSE ANALYSIS
 
 At high frequencies, **internal BJT capacitances** and **parasitic elements** become dominant.
