@@ -104,47 +104,8 @@ Where:
 
 **$R_o = R_C \parallel r_o = \frac{R_C \cdot r_o}{R_C + r_o}$**
 
-So:
-
-**$f_{L_{Cc}} = \frac{1}{2\pi \left( \frac{R_C \cdot r_o}{R_C + r_o} + R_L \right) C_c}$**
-
-## 🔻 Low-Frequency Cutoff Due to Output Coupling Capacitor \( f_{L_{Cc}} \)
-
-### 🔹 Given:
-
 $$
-f_{L_{Cc}} = \frac{1}{2\pi \left( \frac{R_C \cdot r_o}{R_C + r_o} + R_L \right) C_c}
-$$
-
----
-
-### 🔹 Step-by-Step Simplification:
-
-Let:
-
-$$
-R_{\text{out}} = \frac{R_C \cdot r_o}{R_C + r_o}
-$$
-
-Then total resistance seen by the output coupling capacitor:
-
-$$
-R_{\text{total}} = R_{\text{out}} + R_L = \frac{R_C \cdot r_o}{R_C + r_o} + R_L
-$$
-
-Substitute into the original equation:
-
-$$
-f_{L_{Cc}} = \frac{1}{2\pi C_c \left( \frac{R_C \cdot r_o}{R_C + r_o} + R_L \right)}
-$$
-
----
-
-### 🔹 Combine the Terms:
-
-$$
-\left( \frac{R_C \cdot r_o}{R_C + r_o} + R_L \right)
-= \frac{R_C \cdot r_o + R_L (R_C + r_o)}{R_C + r_o}
+\left( \frac{R_C \cdot r_o}{R_C + r_o} + R_L \right)= \frac{R_C \cdot r_o + R_L (R_C + r_o)}{R_C + r_o}
 $$
 
 Substitute back:
@@ -164,6 +125,10 @@ $$
 $$
 f_{L_{Cc}} = \frac{R_C + r_o}{2\pi C_c \left( R_C \cdot r_o + R_L (R_C + r_o) \right)}
 $$
+
+**$f_{L_{Cc}} = \frac{1}{2\pi \left( \frac{R_C \cdot r_o}{R_C + r_o} + R_L \right) C_c}$**
+
+
 
 **Design Implication:**  
 Larger $C_c$ → Smaller $f_{L_{Cc}}$ → **Improved low-frequency coupling**
