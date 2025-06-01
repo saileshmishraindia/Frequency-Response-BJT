@@ -104,6 +104,8 @@ Where:
 
 **$R_o = R_C \parallel r_o = \frac{R_C \cdot r_o}{R_C + r_o}$**
 
+From the Denominator , R_O + R_L = 
+
 $$
 \left( \frac{R_C \cdot r_o}{R_C + r_o} + R_L \right)= \frac{R_C \cdot r_o + R_L (R_C + r_o)}{R_C + r_o}
 $$
