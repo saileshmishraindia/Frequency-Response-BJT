@@ -4,6 +4,33 @@
 
 **Frequency response** refers to how an amplifier’s gain varies with the frequency of the input signal. It reveals the **range of frequencies** over which the amplifier operates efficiently, showing regions of **maximum, constant, and attenuated gain**.
 
+Today’s microelectronic systems incorporate many analog functions. As exemplified by the cellphone and the digital camera studied above, analog circuits often limit the performance of the overall system.
+The most commonly-used analog function is amplification. The signal received by a cellphone or picked up by a microphone proves too small to be processed further. An amplifier is therefore necessary to raise the signal swing to acceptable levels.The performance of an amplifier is characterized by a number of parameters, e.g., gain, speed, and power dissipation. 
+
+A voltage amplifier produces an output swing greater than the input swing. The voltage gain, $$A_v$$ , is defined as - 
+
+$$
+A_v = \frac{V_{\text{out}}}{V_{\text{in}}}
+$$
+
+or,
+
+$$
+A_v\ (\text{in dB}) = 20 \log \left( \frac{V_{\text{out}}}{V_{\text{in}}} \right)
+$$
+
+In order to operate properly and provide gain, an amplifier must draw power from a voltage source, e.g., a battery or a charger. Called the “power supply,” this source is typically denoted by VCC or VDD. Typical amplifiers operate with supply voltages in the range of 1 V to 10 V. 
+
+- What limits the speed of amplifiers ?
+
+
+We expect that various capacitances in the circuit begin to manifest themselves at high frequencies, thereby lowering the gain. In other words, the gain rolls off at sufficiently high frequencies, limiting the (usable) “bandwidth” (BW) of the circuit. Amplifiers (and other analog circuits) suffer from trade-offs between gain, speed and power dissipation. Today’s microelectronic amplifiers achieve bandwidths as large as tens of gigahertz.
+
+![Block Diagram](Gain_Roll-off_amplifier.png)
+
+<p align="center"><strong>Figure 1 : Roll-off of an Amplifier's gain at High frequency</strong></p>
+
+
 ## SIGNIFICANCE OF FREQUENCY RESPONSE ANALYSIS IN IC DESIGN
 
 **✔ Determines amplifier performance in real-world signals.**  
